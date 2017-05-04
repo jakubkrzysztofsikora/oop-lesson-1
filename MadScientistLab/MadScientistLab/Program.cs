@@ -31,6 +31,9 @@ namespace MadScientistLab
                         var animalType = CommandParser.GetAnimalTypeFromParameter(commandFirstParameter);
                         Lab.Create(animalType, commandSecondParameter);
                         break;
+                    case CliCommands.DeleteCommand:
+                        Lab.Delete(commandFirstParameter);
+                        break;
                     case CliCommands.GoToSleepCommand:
                         Lab.GoToSleep(commandFirstParameter);
                         break;

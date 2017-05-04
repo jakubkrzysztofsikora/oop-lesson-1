@@ -65,6 +65,12 @@ namespace MadScientistLab.LabInventory
             _cli.DisplayInfo($"Created {animalType} with name {name}.");
         }
 
+        public void Delete(string name)
+        {
+            _animals.RemoveAll(Animal => Animal.Name ==  name);
+            _cli.DisplayInfo($"Deleted {name}.");
+        }
+
         public void GoToSleep(string name)
         {
             if (!ValidateExistenceOfAnimal(name))
