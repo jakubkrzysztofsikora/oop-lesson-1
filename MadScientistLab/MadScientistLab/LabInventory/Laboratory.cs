@@ -36,17 +36,26 @@ namespace MadScientistLab.LabInventory
                 case AnimalTypeEnum.Lion:
                     _animals.Add(new Lion(name));
                     break;
+                case AnimalTypeEnum.Tiger:
+                    _animals.Add(new Tiger(name));
+                    break;
                 case AnimalTypeEnum.Dog:
                     _animals.Add(new Dog(name));
                     break;
                 case AnimalTypeEnum.Wolf:
                     _animals.Add(new Wolf(name));
                     break;
+                case AnimalTypeEnum.Coyote:
+                    _animals.Add(new Coyote(name));
+                    break;
                 case AnimalTypeEnum.Mouse:
                     _animals.Add(new Mouse(name));
                     break;
                 case AnimalTypeEnum.Rat:
                     _animals.Add(new Rat(name));
+                    break;
+                case AnimalTypeEnum.Hamster:
+                    _animals.Add(new Hamster(name));
                     break;
                 default:
                     _cli.DisplayError($"No such type.");

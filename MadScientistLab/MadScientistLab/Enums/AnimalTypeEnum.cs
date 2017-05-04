@@ -4,9 +4,12 @@
     {
         Cat,
         Lion,
+        Tiger,
         Dog,
         Wolf,
+        Coyote,
         Mouse,
-        Rat
+        Rat,
+        Hamster
     }
 }

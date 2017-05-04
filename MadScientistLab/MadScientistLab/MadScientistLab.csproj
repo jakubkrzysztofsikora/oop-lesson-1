@@ -50,13 +50,16 @@
     <Compile Include="Enums\AnimalTypeEnum.cs" />
     <Compile Include="LabInventory\Animals\Animal.cs" />
     <Compile Include="LabInventory\Animals\Cat.cs" />
+    <Compile Include="LabInventory\Animals\Coyote.cs" />
     <Compile Include="LabInventory\Animals\Dog.cs" />
+    <Compile Include="LabInventory\Animals\Hamster.cs" />
     <Compile Include="LabInventory\Animals\Interfaces\IBarkable.cs" />
     <Compile Include="LabInventory\Animals\Interfaces\IPurrable.cs" />
     <Compile Include="LabInventory\Animals\Interfaces\ISqueakable.cs" />
     <Compile Include="LabInventory\Animals\Lion.cs" />
     <Compile Include="LabInventory\Animals\Mouse.cs" />
     <Compile Include="LabInventory\Animals\Rat.cs" />
+    <Compile Include="LabInventory\Animals\Tiger.cs" />
     <Compile Include="LabInventory\Animals\Wolf.cs" />
     <Compile Include="LabInventory\Laboratory.cs" />
     <Compile Include="LabInventory\Machines\Barker.cs" />
