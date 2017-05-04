@@ -9,7 +9,7 @@ using MadScientistLab.LabInventory.Animals.Interfaces;
 
 namespace MadScientistLab.LabInventory.Animals
 {
-    public class Cat : Animal, IPurrable
+    public class Cat : Animal, IPurrable, ISqueakable
     {
         public Cat(string name) : base(name, AnimalTypeEnum.Cat)
         {
@@ -18,6 +18,11 @@ namespace MadScientistLab.LabInventory.Animals
         public void Purr(ICommandInterface cli)
         {
             cli.DisplayPurr(Name);
+        }
+
+        public void Squeak(ICommandInterface cli)
+        {
+            cli.DisplaySqueak(Name);
         }
     }
 }
