@@ -1,5 +1,5 @@
 # oop-lesson-1
-Repository of live example OOP in C#
+Repository of live example OOP in C# - lesson 1 basic of C#, OOP usage in C#
 
 Assignments:
 * As a user of Mad Scientist Lab I want to have  atiger, a coyote and a hamster in the lab
