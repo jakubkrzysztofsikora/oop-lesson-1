@@ -8,8 +8,8 @@
         Wolf,
         Mouse,
         Rat,
-        tiger,
-        coyote,
-        hamster
+        Tiger,
+        Coyote,
+        Hamster
     }
 }

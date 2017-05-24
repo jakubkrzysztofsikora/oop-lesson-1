@@ -22,6 +22,12 @@ namespace MadScientistLab.Cli
                     return AnimalTypeEnum.Mouse;
                 case CommonConstants.RatTypeName:
                     return AnimalTypeEnum.Rat;
+                case CommonConstants.TigerTypeName:
+                    return AnimalTypeEnum.Tiger;
+                case CommonConstants.CoyoteTypeName:
+                    return AnimalTypeEnum.Coyote;
+                case CommonConstants.HamsterTypeName:
+                    return AnimalTypeEnum.Hamster;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

@@ -9,5 +9,8 @@
         public const string WolfTypeName = "wolf";
         public const string MouseTypeName = "mouse";
         public const string RatTypeName = "rat";
+        public const string TigerTypeName = "tiger";
+        public const string CoyoteTypeName = "coyote";
+        public const string HamsterTypeName = "hamster";
     }
 }

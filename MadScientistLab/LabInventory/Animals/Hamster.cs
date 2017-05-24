@@ -4,18 +4,15 @@ using MadScientistLab.LabInventory.Animals.Interfaces;
 
 namespace MadScientistLab.LabInventory.Animals
 {
-    public class Cat : Animal, IPurrable, ISqueakable
+    class Hamster : Animal, ISqueakable
     {
-        public Cat(string name) : base(name, AnimalTypeEnum.Cat)
+        public Hamster(string name) : base(name, AnimalTypeEnum.Hamster)
         {
         }
-        public void Purr(ICommandInterface cli)
-        {
-            cli.DisplayPurr(Name);
-        }
+
         public void Squeak(ICommandInterface cli)
         {
-            cli.DisplaySqueak(Name);
+            cli.DisplayPurr(Name);
         }
     }
 }

@@ -1,18 +1,17 @@
 ﻿using MadScientistLab.Cli;
 using MadScientistLab.Enums;
 using MadScientistLab.LabInventory.Animals.Interfaces;
-
-
 namespace MadScientistLab.LabInventory.Animals
 {
-    class Tiger : Animal, IPurrable
+    class Coyote : Animal, IBarkable
     {
-        public Tiger(string name) : base(name, AnimalTypeEnum.Tiger)
+        public Coyote(string name) : base(name, AnimalTypeEnum.Coyote)
         {
         }
-        public void Purr(ICommandInterface cli)
+
+        public void Bark(ICommandInterface cli)
         {
-            cli.DisplayPurr(Name);
+            cli.DisplayBark(Name);
         }
     }
 }

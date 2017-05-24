@@ -19,7 +19,7 @@ namespace MadScientistLab
         {
             while (true)
             {
-                var userInput = Console.ReadLine();
+                var userInput = Console.ReadLine().ToLower();
                 var userInputSplited = userInput.Split(CommonConstants.Whitespace);
                 var command = userInputSplited.First();
                 var commandFirstParameter = userInputSplited.Length > 1 ? userInputSplited[1] : String.Empty;
@@ -48,6 +48,9 @@ namespace MadScientistLab
                         break;
                     case CliCommands.ListCommand:
                         Lab.ListAnimals();
+                        break;
+                    case CliCommands.DeleteCommand:
+                        Lab.Delete(commandFirstParameter);
                         break;
                     default:
                         Cli.DisplayError("Unknown command");

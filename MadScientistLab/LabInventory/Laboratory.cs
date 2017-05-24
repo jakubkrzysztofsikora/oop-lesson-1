@@ -6,6 +6,8 @@ using MadScientistLab.Enums;
 using MadScientistLab.LabInventory.Animals;
 using MadScientistLab.LabInventory.Animals.Interfaces;
 using MadScientistLab.LabInventory.Machines;
+using MadScientistLab.Configuration;
+using System.Reflection;
 
 namespace MadScientistLab.LabInventory
 {
@@ -48,6 +50,15 @@ namespace MadScientistLab.LabInventory
                 case AnimalTypeEnum.Rat:
                     _animals.Add(new Rat(name));
                     break;
+                case AnimalTypeEnum.Tiger:
+                    _animals.Add(new Tiger(name));
+                    break;
+                case AnimalTypeEnum.Coyote:
+                    _animals.Add(new Coyote(name));
+                    break;
+                case AnimalTypeEnum.Hamster:
+                    _animals.Add(new Hamster(name));
+                    break;
                 default:
                     _cli.DisplayError($"No such type.");
                     break;
@@ -56,13 +67,21 @@ namespace MadScientistLab.LabInventory
             _cli.DisplayInfo($"Created {animalType} with name {name}.");
         }
 
+        public bool DoesAnimalExist(string ani)
+        {
+            if (!ValidateExistenceOfAnimal(ani))
+            {
+                _cli.DisplayError($"{ani} doesn't exist. Use list to see all existing animals");
+                return false;
+            }
+            else { return true; }
+        }
+
         public void GoToSleep(string name)
         {
-            if (!ValidateExistenceOfAnimal(name))
-            {
-                _cli.DisplayError($"{name} doesn't exist.");
-                return;
-            }
+            if (!DoesAnimalExist(name))
+            { return; }
+
 
             var animal = GetAnimalByName(name);
             animal.GoSleep();
@@ -71,20 +90,20 @@ namespace MadScientistLab.LabInventory
 
         public void GoEat(string name)
         {
-            if (!ValidateExistenceOfAnimal(name))
-            {
-                _cli.DisplayError($"{name} doesn't exist.");
-                return;
-            }
+            if (!DoesAnimalExist(name))
+            { return; }
 
-            var animal = GetAnimalByName(name);
+            Animal animal = GetAnimalByName(name);
             animal.Eat();
             _cli.DisplayInfo($"{animal.Name} is well fed.");
         }
 
         public void Barker(string name)
         {
-            var animal = GetAnimalByName(name);
+            if (!DoesAnimalExist(name))
+            { return; }
+
+            Animal animal = GetAnimalByName(name);
 
             if (!IsAnimalReadyForMachine(animal))
             {
@@ -106,6 +125,9 @@ namespace MadScientistLab.LabInventory
 
         public void Purrer(string name)
         {
+            if (!DoesAnimalExist(name))
+            { return; }
+
             var animal = GetAnimalByName(name);
 
             if (!IsAnimalReadyForMachine(animal))
@@ -128,6 +150,9 @@ namespace MadScientistLab.LabInventory
 
         public void Squeaker(string name)
         {
+            if (!DoesAnimalExist(name))
+            { return; }
+
             var animal = GetAnimalByName(name);
 
             if (!IsAnimalReadyForMachine(animal))
@@ -150,10 +175,23 @@ namespace MadScientistLab.LabInventory
 
         public void ListAnimals()
         {
+            if (_animals.Count() == 0)
+            {
+                _cli.DisplayInfo("There is no animal here!!!\r\nUse create to add an animal to the lab");
+            }
             foreach (var animal in _animals)
             {
                 _cli.DisplayInfo($"{animal.Type} - {animal.Name}");
             }
+        }
+
+        public void Delete(string animal)
+        {
+            if (!DoesAnimalExist(animal))
+            { return; }
+
+            _animals.RemoveAll(x => x.Name == animal);
+            _cli.DisplayInfo($"{animal} removed from animal list");
         }
 
         private bool ValidateExistenceOfAnimal(string name)
