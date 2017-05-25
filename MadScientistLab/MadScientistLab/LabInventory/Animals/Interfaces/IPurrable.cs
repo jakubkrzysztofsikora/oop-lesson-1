@@ -4,6 +4,6 @@ namespace MadScientistLab.LabInventory.Animals.Interfaces
 {
     public interface IPurrable
     {
-        void Purr(ICommandInterface cli);
+        void Squeak(ICommandInterface cli);
     }
 }

@@ -7,6 +7,9 @@
         Dog,
         Wolf,
         Mouse,
-        Rat
+        Rat,
+        Coyote,
+        Tiger,
+        Hamster
     }
 }

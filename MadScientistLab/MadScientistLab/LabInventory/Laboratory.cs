@@ -48,6 +48,15 @@ namespace MadScientistLab.LabInventory
                 case AnimalTypeEnum.Rat:
                     _animals.Add(new Rat(name));
                     break;
+                case AnimalTypeEnum.Coyote:
+                    _animals.Add(new Coyote(name));
+                    break;
+                case AnimalTypeEnum.Tiger:
+                    _animals.Add(new Tiger(name));
+                    break;
+                case AnimalTypeEnum.Hamster:
+                    _animals.Add(new Hamster(name));
+                    break;
                 default:
                     _cli.DisplayError($"No such type.");
                     break;
@@ -155,7 +164,11 @@ namespace MadScientistLab.LabInventory
                 _cli.DisplayInfo($"{animal.Type} - {animal.Name}");
             }
         }
-
+        public void Delete(string nameOfAnimal)
+        {
+            _animals.Remove(GetAnimalByName(nameOfAnimal));
+            _cli.DisplayInfo($"Removed {nameOfAnimal} from the lab");
+        }
         private bool ValidateExistenceOfAnimal(string name)
         {
             return _animals.Any(animal => animal.Name.Equals(name));

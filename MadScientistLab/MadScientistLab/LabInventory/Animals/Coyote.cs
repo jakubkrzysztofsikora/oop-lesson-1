@@ -4,15 +4,15 @@ using MadScientistLab.LabInventory.Animals.Interfaces;
 
 namespace MadScientistLab.LabInventory.Animals
 {
-    public class Lion : Animal, IPurrable
+    public class Coyote : Animal, IBarkable
     {
-        public Lion(string name) : base(name, AnimalTypeEnum.Lion)
+        public Coyote(string name) : base(name, AnimalTypeEnum.Coyote)
         {
         }
 
-        public void Squeak(ICommandInterface cli)
+        public void Bark(ICommandInterface cli)
         {
-            cli.DisplayPurr(Name);
+            cli.DisplayBark(Name);
         }
     }
 }

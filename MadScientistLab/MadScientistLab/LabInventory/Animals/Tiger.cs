@@ -9,20 +9,15 @@ using MadScientistLab.LabInventory.Animals.Interfaces;
 
 namespace MadScientistLab.LabInventory.Animals
 {
-    public class Cat : Animal, IPurrable, ISqueakable
+    public class Tiger : Animal, IPurrable
     {
-        public Cat(string name) : base(name, AnimalTypeEnum.Cat)
+        public Tiger(string name) : base(name, AnimalTypeEnum.Tiger)
         {
-        }
-
-        public void Purr(ICommandInterface cli)
-        {
-            cli.DisplayPurr(Name);
         }
 
         public void Squeak(ICommandInterface cli)
         {
-            cli.DisplaySqueak(Name);
+            cli.DisplayPurr(Name);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace MadScientistLab.LabInventory.Machines
 
         public void Execute(IPurrable animal)
         {
-            animal.Purr(_cli);
+            animal.Squeak(_cli);
         }
     }
 }

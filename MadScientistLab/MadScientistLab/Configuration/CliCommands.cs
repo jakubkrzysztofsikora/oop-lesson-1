@@ -9,5 +9,6 @@
         public const string PurrerCommand = "purrer";
         public const string SqueakerCommand = "squeaker";
         public const string ListCommand = "list";
+        public const string DeleteCommand = "delete";
     }
 }

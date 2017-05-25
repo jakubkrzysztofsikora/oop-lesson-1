@@ -49,6 +49,9 @@ namespace MadScientistLab
                     case CliCommands.ListCommand:
                         Lab.ListAnimals();
                         break;
+                        case CliCommands.DeleteCommand:
+                        Lab.Delete(commandFirstParameter);
+                        break;
                     default:
                         Cli.DisplayError("Unknown command");
                         break;
